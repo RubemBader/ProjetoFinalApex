@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using Data.Models;
+using System.Collections.Generic;
 
 namespace Data.Interfaces
 {
     public interface IContactRepository
     {
-        void CreateContact();
+        void CreateContact(Contact contact);
 
-        List<string> GetContact();
+        List<Contact> GetContact();
 
-        void UpdateContact();
+        void UpdateContact(Contact contact);
 
-        void DeleteContact();
+        void DeleteContact(Contact contact);
     }
 }

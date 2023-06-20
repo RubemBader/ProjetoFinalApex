@@ -8,7 +8,7 @@ namespace Data.DataBaseConection.ModelMapping
     {
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
-            builder.ToTable("Contracts");
+            builder.ToTable("Contacts");
 
             builder.HasKey(Contact => Contact.Id);
             builder.Property(Contact => Contact.Id).ValueGeneratedOnAdd();

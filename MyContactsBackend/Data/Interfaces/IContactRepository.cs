@@ -9,6 +9,8 @@ namespace Data.Interfaces
 
         List<Contact> GetContact();
 
+        Contact GetById(int id);
+
         void UpdateContact(Contact contact);
 
         void DeleteContact(Contact contact);

@@ -29,9 +29,14 @@ namespace Data.Repositories
             DbContext.SaveChanges();
         }
 
-        public List<Contact> GetContacts()
+        public List<Contact> GetContact()
         {
             return DbContext.Contacts.ToList();
+        }
+
+        public Contact GetById(int id)
+        {
+            return DbContext.Contacts.FirstOrDefault(contact => contact.Id == id);
         }
 
         public void UpdateContact(Contact contact)
@@ -39,11 +44,6 @@ namespace Data.Repositories
             DbContext.Contacts.Update(contact);
 
             DbContext.SaveChanges();
-        }
-
-        public List<Contact> GetContact()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

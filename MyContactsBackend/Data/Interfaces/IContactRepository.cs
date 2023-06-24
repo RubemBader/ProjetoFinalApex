@@ -1,18 +1,21 @@
 ﻿using Data.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Data.Interfaces
 {
     public interface IContactRepository
     {
-        void CreateContact(Contact contact);
+        Task CreateAsync(Contact contact);
 
-        List<Contact> GetContact();
+        Task<List<Contact>> GetAllAsync();
 
-        Contact GetById(int id);
+        Task<Contact> GetByIdAsync(int id);
 
-        void UpdateContact(Contact contact);
+        void Update(Contact contact);
 
-        void DeleteContact(Contact contact);
+        void Delete(Contact contact);
+
+        Task SaveChangesAsync();
     }
 }

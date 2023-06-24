@@ -1,16 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Utils.Dtos.User;
 
 namespace Services.Interfaces
 {
     public interface IUserService
     {
-        void CreateUser(UserCreateRequestDto userCreateDto);
+        Task CreateAsync(UserCreateRequestDto userCreateDto);
 
-        List<UserResponseDto> GetUsers();
+        Task<List<UserResponseDto>> GetAllAsync();
 
-        bool UpdateUser(UserUpdateRequestDto userUpdateDto);
+        Task<bool> UpdateAsync(UserUpdateRequestDto userUpdateDto);
 
-        bool DeleteUser(int id);
+        Task UpdateToAdmin(int userId);
+
+        Task<bool> DeleteAsync(int id);
     }
 }

@@ -1,18 +1,23 @@
 ﻿using Data.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Data.Interfaces
 {
     public interface IUserRepository 
     {
-        void CreateUser(User user);
+        Task CreateAsync(User user);
 
-        List<User> GetUsers();
+        Task<List<User>> GetAllAsync();
 
-        User GetById(int id);
+        Task<User> GetByIdAsync(int id);
 
-        void UpdateUser(User user);
+        Task<User> GetByEmailAndPassworAsync(string email, string password);
 
-        void DeleteUser(User user);
+        void Update(User user);
+
+        void Delete(User user);
+
+        Task SaveChangesAsync();
     }
 }
